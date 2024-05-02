@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cover Number Redirect</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+    }
+    .container {
+        text-align: center;
+    }
+    .textbox {
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+    }
+    .button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <form id="redirectForm">
+        <input type="text" id="coverNumber" class="textbox" placeholder="Enter Your Cover Number Here">
+        <br>
+        <button type="button" class="button" onclick="redirectToURL()">Redirect</button>
+    </form>
+</div>
+
+<script>
+    function redirectToURL() {
+        var coverNumber = document.getElementById('coverNumber').value;
+        if (coverNumber.trim() !== '') {
+            window.location = 'http://abc.com?xyz=' + encodeURIComponent(coverNumber);
+        }
+    }
+</script>
+
+</body>
+</html>
